@@ -1,0 +1,25 @@
+## pass in relevant instance types and architectures
+https://docs.aws.amazon.com/dlami/latest/devguide/appendix-ami-release-notes.html
+
+Supported EC2 instances: G6, Gr6, G6e, P4d, P4de, P5, P5e, P5en (G4Dn, G5 not Supported). Release notes: https://docs.aws.amazon.com/dlami/latest/devguide/appendix-ami-release-notes.html
+
+Amazon Elastic Compute Cloud (Amazon EC2) P5 instances, powered by NVIDIA H100 Tensor Core GPUs, 
+
+P5e and P5en instances powered by NVIDIA H200 Tensor Core GPUs
+
+Amazon EC2 G6e instances powered by NVIDIA L40S Tensor Core
+
+
+## Good to knows
+https://aws.amazon.com/releasenotes/dlami-support-policy/
+
+
+## Notes about performance
+g6e.xlarge -> can work for image upscaling tasks
+https://aws.amazon.com/ec2/instance-types/g6e/
+cog predict r8.im/philz1337x/clarity-upscaler
+
+
+##
+add a flag for accelerated -- when GPU instance types are needed
+
