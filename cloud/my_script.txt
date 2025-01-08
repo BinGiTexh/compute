@@ -1,0 +1,44 @@
+#!/bin/bash
+dnf update -y && dnf install git golang -y
+sudo curl -o /usr/local/bin/cog -L "https://github.com/replicate/cog/releases/latest/download/cog_$(uname -s)_$(uname -m)"
+sudo chmod +x /usr/local/bin/cog
+
+## Run prediction using phillz model 
+
+## Could be set as an executable -- may also want to set a timeline of how this takes
+cog predict r8.im/philz1337x/clarity-upscaler@sha256:dfad41707589d68ecdccd1dfa600d55a208f9310748e44bfe35b4a6291453d5e \
+  -i 'seed=1337' \
+  -i 'image="https://replicate.delivery/pbxt/KiDB5iqtTcxiTI17WASotG1Ei0TNJCztdU6J02pnMYAd8B1X/13_before-4.png"' \
+  -i 'prompt="masterpiece, best quality, highres, <lora:more_details:0.5> <lora:SDXLrender_v2.0:1>"' \
+  -i 'dynamic=6' \
+  -i 'handfix="disabled"' \
+  -i 'pattern=false' \
+  -i 'sharpen=0' \
+  -i 'sd_model="juggernaut_reborn.safetensors [338b85bc4f]"' \
+  -i 'scheduler="DPM++ 3M SDE Karras"' \
+  -i 'creativity=0.35' \
+  -i 'lora_links=""' \
+  -i 'downscaling=false' \
+  -i 'resemblance=0.6' \
+  -i 'scale_factor=2' \
+  -i 'tiling_width=112' \
+  -i 'output_format="png"' \
+  -i 'tiling_height=144' \
+  -i 'custom_sd_model=""' \
+  -i 'negative_prompt="(worst quality, low quality, normal quality:2) JuggernautNegative-neg"' \
+  -i 'num_inference_steps=18' \
+  -i 'downscaling_resolution=768'
+
+export TOKEN=`curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600"` \
+&& curl -H "X-aws-ec2-metadata-token: $TOKEN" -v http://169.254.169.254/latest/meta-data/
+
+export Bucket=`curl -H "X-aws-ec2-metadata-token: $TOKEN" -v http://169.254.169.254/latest/meta-data/tags/instance/Bucket`
+
+aws s3 cp output.0.png s3://$Bucket
+
+sudo shutdown -h now
+
+
+
+
+
