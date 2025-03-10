@@ -21,3 +21,10 @@ Convert and optimize for edge deployment
 Deploy to Jetson devices with performance monitoring integrated with Github through Github Actions. Each edge device is used an internal runner for experimentation, closer to codebase and enhances colloboration.
 Capture analytics and feedback for retraining
 
+
+## Rasberry Pi based workflows
+https://docs.ultralytics.com/integrations/ncnn/#deploying-exported-yolo11-ncnn-models
+
+## Nvidia Jetson workflows
+https://docs.ultralytics.com/integrations/tensorrt/#tensorrt
+

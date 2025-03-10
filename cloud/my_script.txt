@@ -36,7 +36,7 @@ export Bucket=`curl -H "X-aws-ec2-metadata-token: $TOKEN" -v http://169.254.169.
 
 aws s3 cp output.0.png s3://$Bucket
 
-sudo shutdown -h now
+#sudo shutdown -h now
 
 
 
