@@ -2,7 +2,7 @@ from ultralytics import YOLO
 import cv2
 
 # Load a model
-model = YOLO("yolov8n-pose.pt")  # load an official model
+model = YOLO("yolov11n-pose.pt")  # load an official model
 
 # Export the model to TensorRT
 model.export(format="engine")  # creates 'yolo11n.engine'
