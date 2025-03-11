@@ -1,0 +1,13 @@
+name: Test Workflow
+
+on:
+ workflow_dispatch:
+jobs:
+  tests_manual_workflow:
+    runs-on: self-hosted, Linux, 4gb, jp6
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - run: |
+        uname -m
+        uname -a
