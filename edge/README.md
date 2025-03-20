@@ -32,3 +32,17 @@ Draws bounding boxes or other visualizations of the detected objects on each fra
 Saves the annotated video to an output file
 
 
+## Usage of improved_inference.py
+
+# Process a video file and display the results
+python yolo_processor.py --model yolov11n-pose.pt --video /path/to/your/video.mp4
+
+# Process a video file and save the results
+python yolo_processor.py --model yolov11n-pose.pt --video /path/to/your/video.mp4 --output processed_video.mp4
+
+# Use webcam
+python yolo_processor.py --model yolov11n-pose.pt
+
+# Use PyTorch model without TensorRT conversion
+python yolo_processor.py --model yolov11n-pose.pt --no-trt
+
