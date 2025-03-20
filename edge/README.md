@@ -46,3 +46,17 @@ python yolo_processor.py --model yolov11n-pose.pt
 # Use PyTorch model without TensorRT conversion
 python yolo_processor.py --model yolov11n-pose.pt --no-trt
 
+
+## Using Inference library with a Trained model pointing to local Edge device
+docker run -d \
+    --name inference-server \
+    --runtime nvidia \
+    --read-only \
+    -p 9001:9001 \
+    --volume ~/.inference/cache:/tmp:rw \
+    --security-opt="no-new-privileges" \
+    --cap-drop="ALL" \
+    --cap-add="NET_BIND_SERVICE" \
+
+python inference_self_hosted.py
+
