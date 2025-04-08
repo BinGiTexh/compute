@@ -1,62 +1,89 @@
-## Compiling a list of sources of best practices when working with Jetsons
-https://docs.ultralytics.com/guides/nvidia-jetson/#best-practices-when-using-nvidia-jetson
+# JupyterLab with YOLO and Roboflow Integration
 
-## Devices will be showcased as Internal github runners that can be invoked upon demand closer to the codebase
+This project provides a dockerized JupyterLab environment with YOLO and Roboflow integration, specifically configured for the fish-scuba-project.
 
+## Prerequisites
 
-## Requirements
-Jetson Super Nano 8GB - dusty containers image https://www.jetson-ai-lab.com/vit/tutorial_nanoowl.html
+1. Docker installed on your system
+2. NVIDIA GPU with appropriate drivers
+3. NVIDIA Container Toolkit installed
+4. Roboflow API key
 
-## Download container
-jetson-containers run --workdir /opt/nanoowl $(autotag nanoowl)
+### Installing NVIDIA Container Toolkit
 
-## Copy videos and script  to container
-docker cp GH011294.MP4  jetson_container_20250320_125557:/opt/nanoowl
-nanoowl_inference.py
+```bash
+curl -s -L https://nvidia.github.io/nvidia-container-runtime/gpgkey | \
+    sudo apt-key add -
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/nvidia-container-runtime/$distribution/nvidia-container-runtime.list | \
+    sudo tee /etc/apt/sources.list.d/nvidia-container-runtime.list
+sudo apt-get update
+sudo apt-get install -y nvidia-container-toolkit
+sudo systemctl restart docker
+```
 
+## Building and Running
 
-## Example usage
-python3 nanoowl_inference.py data/owl_image_encoder_patch32.engine GH011294.MP4  output.mp4  --prompt "Find all fish in the scene" --resize "640x480"
+### Using Docker Compose (Recommended)
 
+1. Export your Roboflow API key:
+   ```bash
+   export ROBOFLOW_API_KEY=your_api_key
+   ```
 
-## Models/ Scripts
+2. Build and start the container:
+   ```bash
+   docker-compose up --build
+   ```
 
-Nanoowl_inference.py
+### Using Docker Directly
 
-This file is a Python script for processing video files with NanoOWL, which appears to be a computer vision model from NVIDIA for detecting objects in images.
-The script specifically:
+1. Build the image:
+   ```bash
+   docker build -t jupyterlab-yolo .
+   ```
 
-Takes a video file as input
-Processes each frame using the NanoOWL object detection model
-Draws bounding boxes or other visualizations of the detected objects on each frame
-Saves the annotated video to an output file
+2. Run the container:
+   ```bash
+   docker run --gpus all -p 8888:8888 \
+     -v $(pwd)/notebooks:/workspace/notebooks \
+     -v $(pwd)/data:/workspace/data \
+     -e ROBOFLOW_API_KEY=your_api_key \
+     jupyterlab-yolo
+   ```
 
+## Accessing JupyterLab
 
-## Usage of improved_inference.py
+1. Once the container is running, open your browser and navigate to:
+   ```
+   http://localhost:8888
+   ```
 
-# Process a video file and display the results
-python yolo_processor.py --model yolov11n-pose.pt --video /path/to/your/video.mp4
+2. Enter the token specified in the docker-compose.yml file (default: "your_secure_token")
 
-# Process a video file and save the results
-python yolo_processor.py --model yolov11n-pose.pt --video /path/to/your/video.mp4 --output processed_video.mp4
+## Using the YOLO Model
 
-# Use webcam
-python yolo_processor.py --model yolov11n-pose.pt
+1. Open the provided `notebooks/yolo_demo.ipynb` notebook
+2. The notebook includes examples of:
+   - Loading the Roboflow model
+   - Running inference on images
+   - Visualizing results
 
-# Use PyTorch model without TensorRT conversion
-python yolo_processor.py --model yolov11n-pose.pt --no-trt
+## Data Persistence
 
+- Notebooks are persisted in the `./notebooks` directory
+- Data files are persisted in the `./data` directory
+- Both directories are mounted as volumes in the container
 
-## Using Inference library with a Trained model pointing to local Edge device
-docker run -d \
-    --name inference-server \
-    --runtime nvidia \
-    --read-only \
-    -p 9001:9001 \
-    --volume ~/.inference/cache:/tmp:rw \
-    --security-opt="no-new-privileges" \
-    --cap-drop="ALL" \
-    --cap-add="NET_BIND_SERVICE" \
+## Security Notes
 
-python inference_self_hosted.py
+1. Change the default JUPYTER_TOKEN in docker-compose.yml before deploying
+2. Never commit your Roboflow API key to version control
+3. Use environment variables for sensitive information
+
+## Troubleshooting
+
+1. If GPU is not detected, ensure nvidia-container-toolkit is properly installed
+2. For authentication issues, verify your Roboflow API key is correctly set
+3. For permission issues with mounted volumes, ensure proper directory permissions
 

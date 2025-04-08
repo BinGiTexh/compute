@@ -1,0 +1,32 @@
+services:
+  jupyterlab:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/workspace/notebooks
+      - ./data:/workspace/data
+    environment:
+      - ROBOFLOW_API_KEY
+      - JUPYTER_TOKEN=your_secure_token  # Change this in production
+
+  inference:
+    image: ultralytics/ultralytics:latest-jetson-jetpack5
+    container_name: happy_snyder
+    read_only: true
+    ports:
+      - "9001:9001"
+    volumes:
+      - ~/.inference/cache:/tmp:rw
+    environment:
+      - ONNXRUNTIME_EXECUTION_PROVIDERS: "[TensorrtExecutionProvider,CUDAExecutionProvider,CPUExecutionProvider]"
+    security_opt:
+      - no-new-privileges
+    cap_drop:
+      - ALL
+    cap_add:
+      - NET_BIND_SERVICE
+    command: tail -f /dev/null
+    tty: true
