@@ -87,3 +87,13 @@ sudo systemctl restart docker
 2. For authentication issues, verify your Roboflow API key is correctly set
 3. For permission issues with mounted volumes, ensure proper directory permissions
 
+
+## Running coralscapes on Jetson AGX
+"${SHELL}" <(curl -L https://micro.mamba.pm/install.sh)
+
+micromamba env create -f environment.yml
+micromamba activate coralscapes
+eval "$(micromamba shell hook --shell bash)"
+micromamba activate coralscapes
+
+python coralscapes_jetson.py  --input_dir ocean-images --output_dir outputs --save_overlay --overlay_alpha 0.5
