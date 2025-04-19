@@ -11,17 +11,18 @@ services:
     environment:
       - ROBOFLOW_API_KEY
       - JUPYTER_TOKEN=your_secure_token  # Change this in production
-
+    networks:
+      - ai_network
   inference:
-    image: ultralytics/ultralytics:latest-jetson-jetpack5
-    container_name: happy_snyder
+    image: roboflow/roboflow-inference-server-jetson-5.1.1:latest
+    container_name: inference-server
     read_only: true
     ports:
       - "9001:9001"
     volumes:
       - ~/.inference/cache:/tmp:rw
     environment:
-      - ONNXRUNTIME_EXECUTION_PROVIDERS: "[TensorrtExecutionProvider,CUDAExecutionProvider,CPUExecutionProvider]"
+      - ONNXRUNTIME_EXECUTION_PROVIDERS="[TensorrtExecutionProvider,CUDAExecutionProvider,CPUExecutionProvider]"
     security_opt:
       - no-new-privileges
     cap_drop:
@@ -30,3 +31,9 @@ services:
       - NET_BIND_SERVICE
     command: tail -f /dev/null
     tty: true
+    networks:
+      - ai_network
+
+networks:
+  ai_network:
+    driver: bridge
