@@ -1,10 +1,11 @@
-# Use the specified base image with NVIDIA support
 FROM dustynv/jupyterlab:r35.4.1
 
 # Install Python packages
 RUN pip install --no-cache-dir \
     roboflow \
     ultralytics \
+    supervision \
+    inference \
     jupyterhub
 
 # Create workspace directory
