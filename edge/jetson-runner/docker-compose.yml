@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  github-runner:
+    image: github-runner:latest
+    volumes:
+      - ./data:/home/github-runner/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - RUNNER_TOKEN=${RUNNER_TOKEN}
+      - RUNNER_NAME=$$(/home/github-runner/data/generate_runner_name.sh)
+      - ORG_NAME=${ORG_NAME}
+    restart: unless-stopped
