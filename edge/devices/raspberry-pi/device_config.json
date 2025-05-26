@@ -1,0 +1,33 @@
+{
+    "device_type": "raspberry-pi",
+    "resources": {
+        "memory": {
+            "total_ram": "8GB",
+            "max_allocation": "6GB",
+            "swap": "2GB"
+        },
+        "cpu": {
+            "cores": 4,
+            "max_threads": 4,
+            "architecture": "ARM v8",
+            "frequency": "1.8GHz"
+        },
+        "gpu": {
+            "available": false,
+            "cuda_cores": 0,
+            "memory": "none",
+            "cuda_capability": "none"
+        }
+    },
+    "constraints": {
+        "max_batch_size": 1,
+        "recommended_thread_count": 2,
+        "thermal_throttle_temp": 75
+    },
+    "features": {
+        "supports_tensorrt": false,
+        "supports_cuda": false,
+        "supports_fp16": false,
+        "supports_int8": true
+    }
+}

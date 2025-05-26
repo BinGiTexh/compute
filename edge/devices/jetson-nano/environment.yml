@@ -1,0 +1,39 @@
+name: coral-edge-nano
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8
+  - pip
+  - numpy
+  - pandas
+  - pytorch=1.10
+  - torchvision
+  - cudatoolkit=10.2
+  - tensorrt=8.2
+  - onnx
+  - opencv
+  - pillow
+  - psutil
+  - pip:
+    - jetson-stats
+    - jupyterlab
+    - roboflow
+    - ultralytics==8.0.0  # Older version for better compatibility
+    - supervision
+    - nvidia-tensorrt
+    - torch2trt
+    - onnx-graphsurgeon
+    - pycocotools
+    - albumentations
+    - tritonclient[all]
+variables:
+  CUDA_HOME: /usr/local/cuda
+  PATH: $PATH:$CUDA_HOME/bin
+  LD_LIBRARY_PATH: $LD_LIBRARY_PATH:$CUDA_HOME/lib64
+  OPENBLAS_NUM_THREADS: 2
+  OMP_NUM_THREADS: 2
+  PYTORCH_JIT: 0  # Disable JIT to save memory
+  CUDA_LAUNCH_BLOCKING: 1  # More stable behavior on limited memory

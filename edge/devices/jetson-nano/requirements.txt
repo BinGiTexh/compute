@@ -1,0 +1,45 @@
+# Core dependencies
+numpy>=1.19.0,<1.22.0  # Older version for better compatibility
+pandas>=1.1.0,<1.4.0
+opencv-python>=4.5.0,<4.6.0
+pillow>=8.0.0,<9.0.0
+psutil>=5.8.0
+
+# Deep Learning
+--extra-index-url https://download.pytorch.org/whl/cu102
+torch==1.10.0
+torchvision==0.11.0
+tensorrt==8.2.0
+onnx>=1.10.0,<1.12.0
+onnxruntime-gpu==1.10.0
+
+# Monitoring and Development
+jupyterlab>=3.0.0,<4.0.0
+ipywidgets>=7.6.0,<8.0.0
+matplotlib>=3.3.0,<3.5.0
+seaborn>=0.11.0,<0.12.0
+
+# YOLO and Computer Vision
+ultralytics==8.0.0  # Fixed version for stability
+supervision==0.6.0
+roboflow>=0.2.0
+albumentations>=1.0.0,<1.2.0
+
+# Optimization Tools
+torch2trt==0.3.0
+onnx-graphsurgeon==0.3.0
+nvidia-pyindex
+nvidia-tensorrt==8.2.0
+
+# Jetson-specific
+jetson-stats>=3.0.0
+jtop>=3.0.0
+
+# Testing and Development
+pytest>=6.0.0,<7.0.0
+pytest-cov>=2.12.0,<3.0.0
+black>=21.0.0,<22.0.0
+flake8>=3.9.0,<4.0.0
+
+# Memory optimization
+memory-profiler>=0.58.0

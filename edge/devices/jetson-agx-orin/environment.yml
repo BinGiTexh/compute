@@ -1,0 +1,37 @@
+name: coral-edge-agx
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8
+  - pip
+  - numpy
+  - pandas
+  - pytorch=2.0
+  - torchvision
+  - cudatoolkit=11.8
+  - tensorrt=8.6
+  - onnx
+  - opencv
+  - pillow
+  - psutil
+  - pip:
+    - jetson-stats
+    - jupyterlab
+    - roboflow
+    - ultralytics
+    - supervision
+    - nvidia-tensorrt
+    - torch2trt
+    - onnx-graphsurgeon
+    - pycocotools
+    - albumentations
+    - tritonclient[all]
+variables:
+  CUDA_HOME: /usr/local/cuda
+  PATH: $PATH:$CUDA_HOME/bin
+  LD_LIBRARY_PATH: $LD_LIBRARY_PATH:$CUDA_HOME/lib64
+  OPENBLAS_NUM_THREADS: 6
+  OMP_NUM_THREADS: 6

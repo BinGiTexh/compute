@@ -1,0 +1,34 @@
+name: coral-edge-pi
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8
+  - pip
+  - numpy
+  - pandas
+  - tflite-runtime
+  - onnxruntime
+  - opencv
+  - pillow
+  - psutil
+  - pip:
+    - jupyterlab
+    - roboflow
+    - ultralytics==8.0.0  # CPU-compatible version
+    - supervision
+    - --extra-index-url https://www.piwheels.org/simple
+    - tflite-support
+    - onnx2tf
+    - pycocotools
+    - albumentations
+    - "torch>=2.0.0"  # CPU-only version
+    - "torchvision>=0.15.0"  # CPU-only version
+variables:
+  OPENBLAS_NUM_THREADS: 2
+  MKL_NUM_THREADS: 2
+  OMP_NUM_THREADS: 2
+  PYTORCH_JIT: 0  # Disable JIT to save memory
+  PYTHONWARNINGS: ignore::UserWarning  # Reduce warning noise
+  MALLOC_MMAP_THRESHOLD_: 131072  # Optimize memory allocation
+  MALLOC_TRIM_THRESHOLD_: 131072  # Regular memory trimming

@@ -1,0 +1,81 @@
+name: Device Matrix CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    name: Test on ${{ matrix.device }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        device: [jetson-agx-orin, jetson-nano, raspberry-pi]
+        include:
+          - device: jetson-agx-orin
+            os: ubuntu-latest
+            python-version: '3.8'
+            gpu: true
+          - device: jetson-nano
+            os: ubuntu-latest
+            python-version: '3.8'
+            gpu: true
+          - device: raspberry-pi
+            os: ubuntu-latest
+            python-version: '3.8'
+            gpu: false
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Device Capability Check
+      run: |
+        echo "Checking device capabilities for ${{ matrix.device }}"
+        python -c "from base_config import DeviceConfig; config = DeviceConfig('${{ matrix.device }}'); print(config.get_device_features())"
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pytest pytest-cov
+        if [ -f "devices/${{ matrix.device }}/requirements.txt" ]; then
+            pip install -r "devices/${{ matrix.device }}/requirements.txt"
+        fi
+
+    - name: Run tests with device context
+      env:
+        DEVICE_TYPE: ${{ matrix.device }}
+        GPU_AVAILABLE: ${{ matrix.gpu }}
+      run: |
+        pytest tests/device_compatibility/test_device_compatibility.py --device=${{ matrix.device }} -v
+
+    - name: Validate notebooks
+      if: matrix.gpu == true
+      run: |
+        for nb in notebooks/full-inference/*.ipynb; do
+          python -c "
+          import json
+          with open('$nb') as f:
+              nb = json.load(f)
+          requirements = nb['metadata'].get('device_requirements', {})
+          if requirements.get('gpu_required', False) and not ${{ matrix.gpu }}:
+              exit(1)
+          "
+        done
+
+    - name: Performance benchmarks
+      run: |
+        python scripts/benchmark.py --device=${{ matrix.device }}
+
+    - name: Upload test results
+      uses: actions/upload-artifact@v2
+      with:
+        name: test-results-${{ matrix.device }}
+        path: test-results/
+

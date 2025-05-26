@@ -1,0 +1,33 @@
+{
+    "device_type": "jetson-nano",
+    "resources": {
+        "memory": {
+            "total_ram": "4GB",
+            "max_allocation": "3GB",
+            "swap": "2GB"
+        },
+        "cpu": {
+            "cores": 4,
+            "max_threads": 4,
+            "architecture": "ARM v8",
+            "frequency": "1.43GHz"
+        },
+        "gpu": {
+            "available": true,
+            "cuda_cores": 128,
+            "memory": "shared",
+            "cuda_capability": "5.3"
+        }
+    },
+    "constraints": {
+        "max_batch_size": 8,
+        "recommended_thread_count": 2,
+        "thermal_throttle_temp": 80
+    },
+    "features": {
+        "supports_tensorrt": true,
+        "supports_cuda": true,
+        "supports_fp16": true,
+        "supports_int8": true
+    }
+}

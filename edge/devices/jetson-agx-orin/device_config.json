@@ -1,0 +1,33 @@
+{
+    "device_type": "jetson-agx-orin",
+    "resources": {
+        "memory": {
+            "total_ram": "32GB",
+            "max_allocation": "24GB",
+            "swap": "8GB"
+        },
+        "cpu": {
+            "cores": 12,
+            "max_threads": 12,
+            "architecture": "ARM v8.2",
+            "frequency": "2.2GHz"
+        },
+        "gpu": {
+            "available": true,
+            "cuda_cores": 2048,
+            "memory": "32GB",
+            "cuda_capability": "8.7"
+        }
+    },
+    "constraints": {
+        "max_batch_size": 64,
+        "recommended_thread_count": 8,
+        "thermal_throttle_temp": 85
+    },
+    "features": {
+        "supports_tensorrt": true,
+        "supports_cuda": true,
+        "supports_fp16": true,
+        "supports_int8": true
+    }
+}

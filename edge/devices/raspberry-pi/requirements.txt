@@ -1,0 +1,52 @@
+# Core dependencies
+numpy>=1.19.0,<1.22.0  # Stable version for Pi
+pandas>=1.1.0,<1.4.0
+opencv-python>=4.5.0,<4.6.0
+pillow>=8.0.0,<9.0.0
+psutil>=5.8.0
+
+# Deep Learning (CPU-only)
+--extra-index-url https://www.piwheels.org/simple
+torch>=1.10.0  # CPU-only version
+torchvision>=0.11.0  # CPU-only version
+tflite-runtime>=2.5.0
+onnxruntime>=1.10.0
+
+# Monitoring and Development
+jupyterlab>=3.0.0,<4.0.0
+ipywidgets>=7.6.0,<8.0.0
+matplotlib>=3.3.0,<3.5.0
+seaborn>=0.11.0,<0.12.0
+
+# YOLO and Computer Vision
+ultralytics==8.0.0  # CPU-optimized version
+supervision==0.6.0
+roboflow>=0.2.0
+albumentations>=1.0.0,<1.2.0
+
+# Raspberry Pi specific
+rpi.gpio>=0.7.0
+picamera>=1.13
+gpiozero>=1.6.2
+
+# Optimization Tools
+onnx2tf>=1.9.0
+tflite-support>=0.4.0
+openvino-dev>=2022.1.0
+
+# Testing and Development
+pytest>=6.0.0,<7.0.0
+pytest-cov>=2.12.0,<3.0.0
+black>=21.0.0,<22.0.0
+flake8>=3.9.0,<4.0.0
+
+# Memory and Performance Optimization
+memory-profiler>=0.58.0
+py-cpuinfo>=8.0.0
+psutil>=5.8.0
+
+# ARM-specific optimizations
+--find-links https://www.piwheels.org/simple
+numpy-quaternion  # Optimized for ARM
+scipy  # Optimized version from piwheels
+scikit-learn  # Optimized version from piwheels
