@@ -1,0 +1,2789 @@
+{
+    "system_info": {
+        "timestamp": "2025-05-29T04:28:00.083236",
+        "architecture": "aarch64",
+        "processor": "aarch64",
+        "platform": "Linux-5.10.104-tegra-aarch64-with-glibc2.29",
+        "python_version": "3.8.10",
+        "hostname": "e60197f29742",
+        "total_memory_gb": 61.32,
+        "available_memory_gb": 47.51,
+        "cpu_count": 12,
+        "cpu_percent": 0.9,
+        "docker_container_id": "e60197f29742"
+    },
+    "config": {
+        "source_path": "test_diver_video.mp4",
+        "model_id": "fish-scuba-project/2",
+        "confidence": 0.1,
+        "fps_limit": 5,
+        "start_time": "2025-05-29T04:27:45.277153",
+        "end_time": "2025-05-29T04:28:00.081161",
+        "processing_stats": {
+            "frames_processed": 250,
+            "total_detections": 0,
+            "avg_confidence": 0,
+            "fps": 0,
+            "system_load": []
+        }
+    },
+    "processing_stats": {
+        "frames_processed": 250,
+        "total_detections": 0,
+        "avg_confidence": 0,
+        "fps": 0,
+        "system_load": []
+    },
+    "frame_results": [
+        {
+            "frame_number": 0,
+            "timestamp": "2025-05-29T04:27:45.315144",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:45.315144",
+                "cpu_percent": 18.0,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 1,
+            "timestamp": "2025-05-29T04:27:45.474858",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:45.474858",
+                "cpu_percent": 4.7,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 2,
+            "timestamp": "2025-05-29T04:27:45.538430",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:45.538430",
+                "cpu_percent": 8.0,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 3,
+            "timestamp": "2025-05-29T04:27:45.604061",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:45.604061",
+                "cpu_percent": 10.1,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 4,
+            "timestamp": "2025-05-29T04:27:45.664872",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:45.664872",
+                "cpu_percent": 6.9,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 5,
+            "timestamp": "2025-05-29T04:27:45.723841",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:45.723841",
+                "cpu_percent": 8.5,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 6,
+            "timestamp": "2025-05-29T04:27:45.783253",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:45.783253",
+                "cpu_percent": 9.7,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 7,
+            "timestamp": "2025-05-29T04:27:45.841517",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:45.841517",
+                "cpu_percent": 5.9,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 8,
+            "timestamp": "2025-05-29T04:27:45.898502",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:45.898502",
+                "cpu_percent": 7.4,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 9,
+            "timestamp": "2025-05-29T04:27:45.957793",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:45.957793",
+                "cpu_percent": 7.1,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 10,
+            "timestamp": "2025-05-29T04:27:46.015457",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:46.015457",
+                "cpu_percent": 8.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 11,
+            "timestamp": "2025-05-29T04:27:46.075398",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:46.075398",
+                "cpu_percent": 11.0,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 12,
+            "timestamp": "2025-05-29T04:27:46.132416",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:46.132416",
+                "cpu_percent": 7.4,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 13,
+            "timestamp": "2025-05-29T04:27:46.190326",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:46.190326",
+                "cpu_percent": 7.2,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 14,
+            "timestamp": "2025-05-29T04:27:46.248822",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:46.248822",
+                "cpu_percent": 9.9,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 15,
+            "timestamp": "2025-05-29T04:27:46.308255",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:46.308255",
+                "cpu_percent": 8.3,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 16,
+            "timestamp": "2025-05-29T04:27:46.365923",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:46.365923",
+                "cpu_percent": 8.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 17,
+            "timestamp": "2025-05-29T04:27:46.425008",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:46.425008",
+                "cpu_percent": 7.1,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 18,
+            "timestamp": "2025-05-29T04:27:46.483867",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:46.483867",
+                "cpu_percent": 8.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 19,
+            "timestamp": "2025-05-29T04:27:46.544697",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:46.544697",
+                "cpu_percent": 6.8,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 20,
+            "timestamp": "2025-05-29T04:27:46.603118",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:46.603118",
+                "cpu_percent": 9.9,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 21,
+            "timestamp": "2025-05-29T04:27:46.661706",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:46.661706",
+                "cpu_percent": 8.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 22,
+            "timestamp": "2025-05-29T04:27:46.718663",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:46.718663",
+                "cpu_percent": 7.4,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 23,
+            "timestamp": "2025-05-29T04:27:46.777456",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:46.777456",
+                "cpu_percent": 5.8,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 24,
+            "timestamp": "2025-05-29T04:27:46.834214",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:46.834214",
+                "cpu_percent": 7.5,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 25,
+            "timestamp": "2025-05-29T04:27:46.892619",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:46.892619",
+                "cpu_percent": 7.2,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 26,
+            "timestamp": "2025-05-29T04:27:46.950296",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:46.950296",
+                "cpu_percent": 7.2,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 27,
+            "timestamp": "2025-05-29T04:27:47.010036",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:47.010036",
+                "cpu_percent": 8.3,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 28,
+            "timestamp": "2025-05-29T04:27:47.069133",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:47.069133",
+                "cpu_percent": 7.1,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 29,
+            "timestamp": "2025-05-29T04:27:47.128986",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:47.128986",
+                "cpu_percent": 10.8,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 30,
+            "timestamp": "2025-05-29T04:27:47.186083",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:47.186083",
+                "cpu_percent": 7.4,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 31,
+            "timestamp": "2025-05-29T04:27:47.243860",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:47.243860",
+                "cpu_percent": 8.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 32,
+            "timestamp": "2025-05-29T04:27:47.302031",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:47.302031",
+                "cpu_percent": 10.3,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 33,
+            "timestamp": "2025-05-29T04:27:47.371318",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:47.371318",
+                "cpu_percent": 8.7,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 34,
+            "timestamp": "2025-05-29T04:27:47.431334",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:47.431334",
+                "cpu_percent": 8.3,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 35,
+            "timestamp": "2025-05-29T04:27:47.490140",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:47.490140",
+                "cpu_percent": 5.8,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 36,
+            "timestamp": "2025-05-29T04:27:47.548756",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:47.548756",
+                "cpu_percent": 9.9,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 37,
+            "timestamp": "2025-05-29T04:27:47.608989",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:47.608989",
+                "cpu_percent": 10.8,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 38,
+            "timestamp": "2025-05-29T04:27:47.668455",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:47.668455",
+                "cpu_percent": 7.1,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 39,
+            "timestamp": "2025-05-29T04:27:47.728732",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:47.728732",
+                "cpu_percent": 8.2,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 40,
+            "timestamp": "2025-05-29T04:27:47.786751",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:47.786751",
+                "cpu_percent": 10.0,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 41,
+            "timestamp": "2025-05-29T04:27:47.846753",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:47.846753",
+                "cpu_percent": 7.0,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 42,
+            "timestamp": "2025-05-29T04:27:47.905370",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:47.905370",
+                "cpu_percent": 7.1,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 43,
+            "timestamp": "2025-05-29T04:27:47.963820",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:47.963820",
+                "cpu_percent": 9.9,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 44,
+            "timestamp": "2025-05-29T04:27:48.021378",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:48.021378",
+                "cpu_percent": 12.5,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 45,
+            "timestamp": "2025-05-29T04:27:48.081045",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:48.081045",
+                "cpu_percent": 5.7,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 46,
+            "timestamp": "2025-05-29T04:27:48.140468",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:48.140468",
+                "cpu_percent": 8.3,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 47,
+            "timestamp": "2025-05-29T04:27:48.199278",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:48.199278",
+                "cpu_percent": 12.5,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 48,
+            "timestamp": "2025-05-29T04:27:48.258578",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:48.258578",
+                "cpu_percent": 8.5,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 49,
+            "timestamp": "2025-05-29T04:27:48.319379",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:48.319379",
+                "cpu_percent": 9.5,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 50,
+            "timestamp": "2025-05-29T04:27:48.378250",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:48.378250",
+                "cpu_percent": 12.5,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 51,
+            "timestamp": "2025-05-29T04:27:48.437260",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:48.437260",
+                "cpu_percent": 5.8,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 52,
+            "timestamp": "2025-05-29T04:27:48.494846",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:48.494846",
+                "cpu_percent": 8.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 53,
+            "timestamp": "2025-05-29T04:27:48.555634",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:48.555634",
+                "cpu_percent": 8.3,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 54,
+            "timestamp": "2025-05-29T04:27:48.614931",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:48.614931",
+                "cpu_percent": 7.0,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 55,
+            "timestamp": "2025-05-29T04:27:48.674018",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:48.674018",
+                "cpu_percent": 5.8,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 56,
+            "timestamp": "2025-05-29T04:27:48.731560",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:48.731560",
+                "cpu_percent": 8.7,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 57,
+            "timestamp": "2025-05-29T04:27:48.790909",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:48.790909",
+                "cpu_percent": 8.5,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 58,
+            "timestamp": "2025-05-29T04:27:48.851341",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:48.851341",
+                "cpu_percent": 9.5,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 59,
+            "timestamp": "2025-05-29T04:27:48.909887",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:48.909887",
+                "cpu_percent": 5.9,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 60,
+            "timestamp": "2025-05-29T04:27:48.968023",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:48.968023",
+                "cpu_percent": 7.2,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 61,
+            "timestamp": "2025-05-29T04:27:49.027570",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:49.027570",
+                "cpu_percent": 9.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 62,
+            "timestamp": "2025-05-29T04:27:49.086876",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:49.086876",
+                "cpu_percent": 5.8,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 63,
+            "timestamp": "2025-05-29T04:27:49.144687",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:49.144687",
+                "cpu_percent": 7.2,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 64,
+            "timestamp": "2025-05-29T04:27:49.201461",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:49.201461",
+                "cpu_percent": 8.8,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 65,
+            "timestamp": "2025-05-29T04:27:49.260156",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:49.260156",
+                "cpu_percent": 8.5,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 66,
+            "timestamp": "2025-05-29T04:27:49.319016",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:49.319016",
+                "cpu_percent": 7.1,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 67,
+            "timestamp": "2025-05-29T04:27:49.377182",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:49.377182",
+                "cpu_percent": 8.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 68,
+            "timestamp": "2025-05-29T04:27:49.435001",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:49.435001",
+                "cpu_percent": 8.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 69,
+            "timestamp": "2025-05-29T04:27:49.495160",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:49.495160",
+                "cpu_percent": 8.3,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 70,
+            "timestamp": "2025-05-29T04:27:49.552409",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:49.552409",
+                "cpu_percent": 7.4,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 71,
+            "timestamp": "2025-05-29T04:27:49.612226",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:49.612226",
+                "cpu_percent": 8.3,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 72,
+            "timestamp": "2025-05-29T04:27:49.671700",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:49.671700",
+                "cpu_percent": 5.7,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 73,
+            "timestamp": "2025-05-29T04:27:49.730823",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:49.730823",
+                "cpu_percent": 8.5,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 74,
+            "timestamp": "2025-05-29T04:27:49.793690",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:49.793690",
+                "cpu_percent": 8.0,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 75,
+            "timestamp": "2025-05-29T04:27:49.852683",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:49.852683",
+                "cpu_percent": 9.9,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 76,
+            "timestamp": "2025-05-29T04:27:49.910406",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:49.910406",
+                "cpu_percent": 10.0,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 77,
+            "timestamp": "2025-05-29T04:27:49.970475",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:49.970475",
+                "cpu_percent": 7.0,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 78,
+            "timestamp": "2025-05-29T04:27:50.029146",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:50.029146",
+                "cpu_percent": 9.9,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 79,
+            "timestamp": "2025-05-29T04:27:50.088829",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:50.088829",
+                "cpu_percent": 8.5,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 80,
+            "timestamp": "2025-05-29T04:27:50.146360",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:50.146360",
+                "cpu_percent": 7.4,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 81,
+            "timestamp": "2025-05-29T04:27:50.204738",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:50.204738",
+                "cpu_percent": 8.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 82,
+            "timestamp": "2025-05-29T04:27:50.262851",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:50.262851",
+                "cpu_percent": 9.9,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 83,
+            "timestamp": "2025-05-29T04:27:50.321630",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:50.321630",
+                "cpu_percent": 7.1,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 84,
+            "timestamp": "2025-05-29T04:27:50.379685",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:50.379685",
+                "cpu_percent": 5.9,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 85,
+            "timestamp": "2025-05-29T04:27:50.441004",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:50.441004",
+                "cpu_percent": 8.1,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 86,
+            "timestamp": "2025-05-29T04:27:50.499491",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:50.499491",
+                "cpu_percent": 8.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 87,
+            "timestamp": "2025-05-29T04:27:50.558107",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:50.558107",
+                "cpu_percent": 7.2,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 88,
+            "timestamp": "2025-05-29T04:27:50.615373",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:50.615373",
+                "cpu_percent": 7.4,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 89,
+            "timestamp": "2025-05-29T04:27:50.673436",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:50.673436",
+                "cpu_percent": 8.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 90,
+            "timestamp": "2025-05-29T04:27:50.730815",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:50.730815",
+                "cpu_percent": 8.7,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 91,
+            "timestamp": "2025-05-29T04:27:50.789229",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:50.789229",
+                "cpu_percent": 8.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 92,
+            "timestamp": "2025-05-29T04:27:50.848125",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:50.848125",
+                "cpu_percent": 8.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 93,
+            "timestamp": "2025-05-29T04:27:50.906432",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:50.906432",
+                "cpu_percent": 5.9,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 94,
+            "timestamp": "2025-05-29T04:27:50.964641",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:50.964641",
+                "cpu_percent": 11.1,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 95,
+            "timestamp": "2025-05-29T04:27:51.023586",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:51.023586",
+                "cpu_percent": 5.8,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 96,
+            "timestamp": "2025-05-29T04:27:51.080885",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:51.080885",
+                "cpu_percent": 12.9,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 97,
+            "timestamp": "2025-05-29T04:27:51.140273",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:51.140273",
+                "cpu_percent": 9.7,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 98,
+            "timestamp": "2025-05-29T04:27:51.198923",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:51.198923",
+                "cpu_percent": 7.1,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 99,
+            "timestamp": "2025-05-29T04:27:51.258056",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:51.258056",
+                "cpu_percent": 5.8,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 100,
+            "timestamp": "2025-05-29T04:27:51.316456",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:51.316456",
+                "cpu_percent": 8.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 101,
+            "timestamp": "2025-05-29T04:27:51.374206",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:51.374206",
+                "cpu_percent": 8.7,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 102,
+            "timestamp": "2025-05-29T04:27:51.432832",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:51.432832",
+                "cpu_percent": 7.1,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 103,
+            "timestamp": "2025-05-29T04:27:51.491125",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:51.491125",
+                "cpu_percent": 8.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 104,
+            "timestamp": "2025-05-29T04:27:51.548995",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:51.548995",
+                "cpu_percent": 10.0,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 105,
+            "timestamp": "2025-05-29T04:27:51.606959",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:51.606959",
+                "cpu_percent": 8.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 106,
+            "timestamp": "2025-05-29T04:27:51.664362",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:51.664362",
+                "cpu_percent": 7.4,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 107,
+            "timestamp": "2025-05-29T04:27:51.721546",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:51.721546",
+                "cpu_percent": 7.4,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 108,
+            "timestamp": "2025-05-29T04:27:51.778527",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:51.778527",
+                "cpu_percent": 7.4,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 109,
+            "timestamp": "2025-05-29T04:27:51.838309",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:51.838309",
+                "cpu_percent": 8.3,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 110,
+            "timestamp": "2025-05-29T04:27:51.896295",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:51.896295",
+                "cpu_percent": 7.4,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 111,
+            "timestamp": "2025-05-29T04:27:51.954952",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:51.954952",
+                "cpu_percent": 8.5,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 112,
+            "timestamp": "2025-05-29T04:27:52.012263",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:52.012263",
+                "cpu_percent": 7.4,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 113,
+            "timestamp": "2025-05-29T04:27:52.071411",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:52.071411",
+                "cpu_percent": 8.5,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 114,
+            "timestamp": "2025-05-29T04:27:52.130430",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:52.130430",
+                "cpu_percent": 8.5,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 115,
+            "timestamp": "2025-05-29T04:27:52.188004",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:52.188004",
+                "cpu_percent": 8.7,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 116,
+            "timestamp": "2025-05-29T04:27:52.246113",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:52.246113",
+                "cpu_percent": 7.2,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 117,
+            "timestamp": "2025-05-29T04:27:52.303729",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:52.303729",
+                "cpu_percent": 8.7,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 118,
+            "timestamp": "2025-05-29T04:27:52.362177",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:52.362177",
+                "cpu_percent": 7.2,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 119,
+            "timestamp": "2025-05-29T04:27:52.420497",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:52.420497",
+                "cpu_percent": 9.9,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 120,
+            "timestamp": "2025-05-29T04:27:52.478084",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:52.478084",
+                "cpu_percent": 8.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 121,
+            "timestamp": "2025-05-29T04:27:52.535907",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:52.535907",
+                "cpu_percent": 7.4,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 122,
+            "timestamp": "2025-05-29T04:27:52.594681",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:52.594681",
+                "cpu_percent": 7.1,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 123,
+            "timestamp": "2025-05-29T04:27:52.652633",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:52.652633",
+                "cpu_percent": 8.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 124,
+            "timestamp": "2025-05-29T04:27:52.710455",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:52.710455",
+                "cpu_percent": 9.9,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 125,
+            "timestamp": "2025-05-29T04:27:52.769354",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:52.769354",
+                "cpu_percent": 7.2,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 126,
+            "timestamp": "2025-05-29T04:27:52.827473",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:52.827473",
+                "cpu_percent": 7.2,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 127,
+            "timestamp": "2025-05-29T04:27:52.887391",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:52.887391",
+                "cpu_percent": 8.3,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 128,
+            "timestamp": "2025-05-29T04:27:52.945697",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:52.945697",
+                "cpu_percent": 9.9,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 129,
+            "timestamp": "2025-05-29T04:27:53.004524",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:53.004524",
+                "cpu_percent": 7.1,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 130,
+            "timestamp": "2025-05-29T04:27:53.062820",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:53.062820",
+                "cpu_percent": 9.9,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 131,
+            "timestamp": "2025-05-29T04:27:53.120248",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:53.120248",
+                "cpu_percent": 4.5,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 132,
+            "timestamp": "2025-05-29T04:27:53.177352",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:53.177352",
+                "cpu_percent": 8.7,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 133,
+            "timestamp": "2025-05-29T04:27:53.236371",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:53.236371",
+                "cpu_percent": 9.7,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 134,
+            "timestamp": "2025-05-29T04:27:53.294485",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:53.294485",
+                "cpu_percent": 9.9,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 135,
+            "timestamp": "2025-05-29T04:27:53.354162",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:53.354162",
+                "cpu_percent": 7.0,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 136,
+            "timestamp": "2025-05-29T04:27:53.419552",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:53.419552",
+                "cpu_percent": 18.8,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 137,
+            "timestamp": "2025-05-29T04:27:53.480132",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:53.480132",
+                "cpu_percent": 16.4,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 138,
+            "timestamp": "2025-05-29T04:27:53.539219",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:53.539219",
+                "cpu_percent": 15.7,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 139,
+            "timestamp": "2025-05-29T04:27:53.599790",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:53.599790",
+                "cpu_percent": 6.9,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 140,
+            "timestamp": "2025-05-29T04:27:53.658044",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:53.658044",
+                "cpu_percent": 13.0,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 141,
+            "timestamp": "2025-05-29T04:27:53.717006",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:53.717006",
+                "cpu_percent": 11.0,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 142,
+            "timestamp": "2025-05-29T04:27:53.775122",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:53.775122",
+                "cpu_percent": 8.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 143,
+            "timestamp": "2025-05-29T04:27:53.833786",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:53.833786",
+                "cpu_percent": 7.2,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 144,
+            "timestamp": "2025-05-29T04:27:53.892481",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:53.892481",
+                "cpu_percent": 7.1,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 145,
+            "timestamp": "2025-05-29T04:27:53.952755",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:53.952755",
+                "cpu_percent": 9.7,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 146,
+            "timestamp": "2025-05-29T04:27:54.011344",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:54.011344",
+                "cpu_percent": 5.8,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 147,
+            "timestamp": "2025-05-29T04:27:54.070297",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:54.070297",
+                "cpu_percent": 5.8,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 148,
+            "timestamp": "2025-05-29T04:27:54.127619",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:54.127619",
+                "cpu_percent": 10.0,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 149,
+            "timestamp": "2025-05-29T04:27:54.186413",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:54.186413",
+                "cpu_percent": 7.1,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 150,
+            "timestamp": "2025-05-29T04:27:54.243607",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:54.243607",
+                "cpu_percent": 10.3,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 151,
+            "timestamp": "2025-05-29T04:27:54.301851",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:54.301851",
+                "cpu_percent": 5.9,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 152,
+            "timestamp": "2025-05-29T04:27:54.360464",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:54.360464",
+                "cpu_percent": 9.9,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 153,
+            "timestamp": "2025-05-29T04:27:54.420349",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:54.420349",
+                "cpu_percent": 8.3,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 154,
+            "timestamp": "2025-05-29T04:27:54.478187",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:54.478187",
+                "cpu_percent": 7.4,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 155,
+            "timestamp": "2025-05-29T04:27:54.538942",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:54.538942",
+                "cpu_percent": 12.0,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 156,
+            "timestamp": "2025-05-29T04:27:54.600292",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:54.600292",
+                "cpu_percent": 5.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 157,
+            "timestamp": "2025-05-29T04:27:54.662220",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:54.662220",
+                "cpu_percent": 8.1,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 158,
+            "timestamp": "2025-05-29T04:27:54.720789",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:54.720789",
+                "cpu_percent": 9.9,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 159,
+            "timestamp": "2025-05-29T04:27:54.779660",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:54.779660",
+                "cpu_percent": 7.1,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 160,
+            "timestamp": "2025-05-29T04:27:54.838329",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:54.838329",
+                "cpu_percent": 8.5,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 161,
+            "timestamp": "2025-05-29T04:27:54.896822",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:54.896822",
+                "cpu_percent": 8.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 162,
+            "timestamp": "2025-05-29T04:27:54.954892",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:54.954892",
+                "cpu_percent": 9.9,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 163,
+            "timestamp": "2025-05-29T04:27:55.013873",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:55.013873",
+                "cpu_percent": 8.5,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 164,
+            "timestamp": "2025-05-29T04:27:55.072348",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:55.072348",
+                "cpu_percent": 8.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 165,
+            "timestamp": "2025-05-29T04:27:55.131944",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:55.131944",
+                "cpu_percent": 8.5,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 166,
+            "timestamp": "2025-05-29T04:27:55.190132",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:55.190132",
+                "cpu_percent": 7.2,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 167,
+            "timestamp": "2025-05-29T04:27:55.248719",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:55.248719",
+                "cpu_percent": 7.2,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 168,
+            "timestamp": "2025-05-29T04:27:55.306818",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:55.306818",
+                "cpu_percent": 7.2,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 169,
+            "timestamp": "2025-05-29T04:27:55.365875",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:55.365875",
+                "cpu_percent": 5.8,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 170,
+            "timestamp": "2025-05-29T04:27:55.423054",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:55.423054",
+                "cpu_percent": 10.0,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 171,
+            "timestamp": "2025-05-29T04:27:55.481058",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:55.481058",
+                "cpu_percent": 7.2,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 172,
+            "timestamp": "2025-05-29T04:27:55.537963",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:55.537963",
+                "cpu_percent": 8.7,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 173,
+            "timestamp": "2025-05-29T04:27:55.597456",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:55.597456",
+                "cpu_percent": 7.1,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 174,
+            "timestamp": "2025-05-29T04:27:55.654905",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:55.654905",
+                "cpu_percent": 7.4,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 175,
+            "timestamp": "2025-05-29T04:27:55.713278",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:55.713278",
+                "cpu_percent": 7.2,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 176,
+            "timestamp": "2025-05-29T04:27:55.770510",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:55.770510",
+                "cpu_percent": 10.0,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 177,
+            "timestamp": "2025-05-29T04:27:55.828806",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:55.828806",
+                "cpu_percent": 7.2,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 178,
+            "timestamp": "2025-05-29T04:27:55.886480",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:55.886480",
+                "cpu_percent": 7.4,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 179,
+            "timestamp": "2025-05-29T04:27:55.944562",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:55.944562",
+                "cpu_percent": 11.1,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 180,
+            "timestamp": "2025-05-29T04:27:56.001023",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:56.001023",
+                "cpu_percent": 7.5,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 181,
+            "timestamp": "2025-05-29T04:27:56.060525",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:56.060525",
+                "cpu_percent": 9.7,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 182,
+            "timestamp": "2025-05-29T04:27:56.119129",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:56.119129",
+                "cpu_percent": 7.1,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 183,
+            "timestamp": "2025-05-29T04:27:56.179129",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:56.179129",
+                "cpu_percent": 9.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 184,
+            "timestamp": "2025-05-29T04:27:56.238044",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:56.238044",
+                "cpu_percent": 8.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 185,
+            "timestamp": "2025-05-29T04:27:56.296573",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:56.296573",
+                "cpu_percent": 8.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 186,
+            "timestamp": "2025-05-29T04:27:56.355178",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:56.355178",
+                "cpu_percent": 7.1,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 187,
+            "timestamp": "2025-05-29T04:27:56.414271",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:56.414271",
+                "cpu_percent": 8.5,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 188,
+            "timestamp": "2025-05-29T04:27:56.471302",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:56.471302",
+                "cpu_percent": 7.5,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 189,
+            "timestamp": "2025-05-29T04:27:56.530903",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:56.530903",
+                "cpu_percent": 8.3,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 190,
+            "timestamp": "2025-05-29T04:27:56.588126",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:56.588126",
+                "cpu_percent": 7.4,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 191,
+            "timestamp": "2025-05-29T04:27:56.646749",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:56.646749",
+                "cpu_percent": 5.9,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 192,
+            "timestamp": "2025-05-29T04:27:56.703654",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:56.703654",
+                "cpu_percent": 7.4,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 193,
+            "timestamp": "2025-05-29T04:27:56.764342",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:56.764342",
+                "cpu_percent": 8.2,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 194,
+            "timestamp": "2025-05-29T04:27:56.822492",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:56.822492",
+                "cpu_percent": 8.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 195,
+            "timestamp": "2025-05-29T04:27:56.880778",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:56.880778",
+                "cpu_percent": 8.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 196,
+            "timestamp": "2025-05-29T04:27:56.937813",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:56.937813",
+                "cpu_percent": 8.7,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 197,
+            "timestamp": "2025-05-29T04:27:56.996417",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:56.996417",
+                "cpu_percent": 9.9,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 198,
+            "timestamp": "2025-05-29T04:27:57.054101",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:57.054101",
+                "cpu_percent": 7.2,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 199,
+            "timestamp": "2025-05-29T04:27:57.113766",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:57.113766",
+                "cpu_percent": 7.1,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 200,
+            "timestamp": "2025-05-29T04:27:57.170699",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:57.170699",
+                "cpu_percent": 7.4,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 201,
+            "timestamp": "2025-05-29T04:27:57.228996",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:57.228996",
+                "cpu_percent": 7.2,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 202,
+            "timestamp": "2025-05-29T04:27:57.286269",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:57.286269",
+                "cpu_percent": 7.4,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 203,
+            "timestamp": "2025-05-29T04:27:57.345955",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:57.345955",
+                "cpu_percent": 8.3,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 204,
+            "timestamp": "2025-05-29T04:27:57.403958",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:57.403958",
+                "cpu_percent": 8.7,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 205,
+            "timestamp": "2025-05-29T04:27:57.462920",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:57.462920",
+                "cpu_percent": 9.7,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 206,
+            "timestamp": "2025-05-29T04:27:57.520526",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:57.520526",
+                "cpu_percent": 7.2,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 207,
+            "timestamp": "2025-05-29T04:27:57.579679",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:57.579679",
+                "cpu_percent": 5.8,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 208,
+            "timestamp": "2025-05-29T04:27:57.637718",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:57.637718",
+                "cpu_percent": 8.7,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 209,
+            "timestamp": "2025-05-29T04:27:57.696454",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:57.696454",
+                "cpu_percent": 7.1,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 210,
+            "timestamp": "2025-05-29T04:27:57.753904",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:57.753904",
+                "cpu_percent": 8.7,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 211,
+            "timestamp": "2025-05-29T04:27:57.812358",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:57.812358",
+                "cpu_percent": 7.2,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 212,
+            "timestamp": "2025-05-29T04:27:57.870336",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:57.870336",
+                "cpu_percent": 7.2,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 213,
+            "timestamp": "2025-05-29T04:27:57.928883",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:57.928883",
+                "cpu_percent": 9.7,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 214,
+            "timestamp": "2025-05-29T04:27:57.986524",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:57.986524",
+                "cpu_percent": 8.7,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 215,
+            "timestamp": "2025-05-29T04:27:58.045945",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:58.045945",
+                "cpu_percent": 7.1,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 216,
+            "timestamp": "2025-05-29T04:27:58.103900",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:58.103900",
+                "cpu_percent": 7.2,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 217,
+            "timestamp": "2025-05-29T04:27:58.163212",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:58.163212",
+                "cpu_percent": 8.5,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 218,
+            "timestamp": "2025-05-29T04:27:58.222414",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:58.222414",
+                "cpu_percent": 5.8,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 219,
+            "timestamp": "2025-05-29T04:27:58.281023",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:58.281023",
+                "cpu_percent": 7.1,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 220,
+            "timestamp": "2025-05-29T04:27:58.338529",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:58.338529",
+                "cpu_percent": 8.7,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 221,
+            "timestamp": "2025-05-29T04:27:58.397284",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:58.397284",
+                "cpu_percent": 10.1,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 222,
+            "timestamp": "2025-05-29T04:27:58.455614",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:58.455614",
+                "cpu_percent": 7.2,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 223,
+            "timestamp": "2025-05-29T04:27:58.515545",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:58.515545",
+                "cpu_percent": 9.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 224,
+            "timestamp": "2025-05-29T04:27:58.572220",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:58.572220",
+                "cpu_percent": 7.5,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 225,
+            "timestamp": "2025-05-29T04:27:58.630537",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:58.630537",
+                "cpu_percent": 9.9,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 226,
+            "timestamp": "2025-05-29T04:27:58.689353",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:58.689353",
+                "cpu_percent": 8.5,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 227,
+            "timestamp": "2025-05-29T04:27:58.748273",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:58.748273",
+                "cpu_percent": 8.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 228,
+            "timestamp": "2025-05-29T04:27:58.806308",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:58.806308",
+                "cpu_percent": 5.9,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 229,
+            "timestamp": "2025-05-29T04:27:58.865720",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:58.865720",
+                "cpu_percent": 9.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 230,
+            "timestamp": "2025-05-29T04:27:58.923545",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:58.923545",
+                "cpu_percent": 6.0,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 231,
+            "timestamp": "2025-05-29T04:27:58.981713",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:58.981713",
+                "cpu_percent": 7.2,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 232,
+            "timestamp": "2025-05-29T04:27:59.038476",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:59.038476",
+                "cpu_percent": 10.0,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 233,
+            "timestamp": "2025-05-29T04:27:59.096491",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:59.096491",
+                "cpu_percent": 10.0,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 234,
+            "timestamp": "2025-05-29T04:27:59.154036",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:59.154036",
+                "cpu_percent": 8.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 235,
+            "timestamp": "2025-05-29T04:27:59.213225",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:59.213225",
+                "cpu_percent": 5.8,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 236,
+            "timestamp": "2025-05-29T04:27:59.270196",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:59.270196",
+                "cpu_percent": 8.8,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 237,
+            "timestamp": "2025-05-29T04:27:59.327996",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:59.327996",
+                "cpu_percent": 8.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 238,
+            "timestamp": "2025-05-29T04:27:59.386432",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:59.386432",
+                "cpu_percent": 7.2,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 239,
+            "timestamp": "2025-05-29T04:27:59.444719",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:59.444719",
+                "cpu_percent": 7.1,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 240,
+            "timestamp": "2025-05-29T04:27:59.502420",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:59.502420",
+                "cpu_percent": 8.7,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 241,
+            "timestamp": "2025-05-29T04:27:59.560392",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:59.560392",
+                "cpu_percent": 7.2,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 242,
+            "timestamp": "2025-05-29T04:27:59.617982",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:59.617982",
+                "cpu_percent": 7.2,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 243,
+            "timestamp": "2025-05-29T04:27:59.676235",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:59.676235",
+                "cpu_percent": 8.6,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 244,
+            "timestamp": "2025-05-29T04:27:59.733815",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:59.733815",
+                "cpu_percent": 5.9,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 245,
+            "timestamp": "2025-05-29T04:27:59.793001",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:59.793001",
+                "cpu_percent": 8.5,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 246,
+            "timestamp": "2025-05-29T04:27:59.850197",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:59.850197",
+                "cpu_percent": 8.7,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 247,
+            "timestamp": "2025-05-29T04:27:59.908037",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:59.908037",
+                "cpu_percent": 7.2,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 248,
+            "timestamp": "2025-05-29T04:27:59.965071",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:27:59.965071",
+                "cpu_percent": 8.7,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        },
+        {
+            "frame_number": 249,
+            "timestamp": "2025-05-29T04:28:00.023888",
+            "predictions": [],
+            "system_stats": {
+                "timestamp": "2025-05-29T04:28:00.023888",
+                "cpu_percent": 7.2,
+                "memory_percent": 22.5,
+                "fps": 25.0
+            }
+        }
+    ]
+}

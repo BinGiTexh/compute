@@ -1,0 +1,26 @@
+video:
+  input_paths:
+    - type: local
+      path: /workspace/test_videos/*.mp4
+  output_path: /output/processed
+
+inference:
+  model_id: "fish-scuba-project/2"
+  confidence_threshold: 0.1
+  batch_size: 1
+  api_url: "http://inference-server:9001"
+
+processing:
+  fps_limit: 5
+  export_format: ["json", "csv"]
+  timestamp_format: "%Y-%m-%d %H:%M:%S"
+  overlay:
+    show_fps: true
+    show_detections: true
+    show_system_stats: true
+
+system:
+  min_memory_gb: 4
+  min_cpu_cores: 2
+  log_level: "INFO"
+  temp_directory: "/tmp/processing"

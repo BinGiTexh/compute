@@ -1,0 +1,84 @@
+name: Video Processing Pipeline
+
+on:
+  push:
+    paths:
+      - 'edge/configs/**'
+      - 'edge/scripts/**'
+      - 'edge/notebooks/**'
+      - 'edge/docker/**'
+  workflow_dispatch:
+    inputs:
+      video_path:
+        description: 'Path to video file'
+        required: true
+      model_id:
+        description: 'Roboflow model ID'
+        default: 'fish-scuba-project/2'
+        required: false
+      confidence:
+        description: 'Detection confidence threshold'
+        default: '0.1'
+        required: false
+
+jobs:
+  process-video:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Build and start containers
+        working-directory: edge
+        env:
+          ROBOFLOW_API_KEY: ${{ secrets.ROBOFLOW_API_KEY }}
+        run: |
+          docker compose build
+          docker compose up -d
+
+      - name: Wait for services
+        run: |
+          sleep 30  # Give services time to start
+
+      - name: Check inference server health
+        run: |
+          curl -f http://localhost:9001/health || exit 1
+
+      - name: Process video
+        working-directory: edge
+        env:
+          VIDEO_PATH: ${{ github.event.inputs.video_path }}
+          MODEL_ID: ${{ github.event.inputs.model_id }}
+          CONFIDENCE: ${{ github.event.inputs.confidence }}
+        run: |
+          docker compose exec -T jupyterlab python scripts/process_video.py \
+            --config configs/default_config.yaml \
+            --video ${VIDEO_PATH} \
+            --model-id ${MODEL_ID:-fish-scuba-project/2} \
+            --confidence ${CONFIDENCE:-0.1}
+
+      - name: Export results
+        working-directory: edge
+        run: |
+          docker compose exec -T jupyterlab python scripts/export_results.py \
+            --input /output/processing_results.json \
+            --output-dir /output
+
+      - name: Upload results
+        uses: actions/upload-artifact@v2
+        with:
+          name: processing-results
+          path: |
+            edge/output/*.json
+            edge/output/*.csv
+            edge/output/notebooks/*.ipynb
+
+      - name: Cleanup
+        if: always()
+        working-directory: edge
+        run: |
+          docker compose down
+

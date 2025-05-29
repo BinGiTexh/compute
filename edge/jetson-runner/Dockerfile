@@ -16,7 +16,7 @@ RUN useradd -m github-runner
 
 # Hardcode runner version and token for testing
 ARG RUNNER_VERSION=2.324.0
-ARG RUNNER_TOKEN=AKAQHRJ355BIDYUVL5VTTQLIGJ25G
+ARG RUNNER_TOKEN
 ARG ORG_NAME="IMAC-community"
 
 # Create a directory for the runner and switch to it
