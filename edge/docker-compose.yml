@@ -10,7 +10,7 @@ services:
       - ./data:/workspace/data
     environment:
       - ROBOFLOW_API_KEY
-      - JUPYTER_TOKEN=your_secure_token  # Change this in production
+      - JUPYTER_TOKEN
     networks:
       - ai_network
   inference:
@@ -22,15 +22,13 @@ services:
     volumes:
       - ~/.inference/cache:/tmp:rw
     environment:
-      - ONNXRUNTIME_EXECUTION_PROVIDERS="[TensorrtExecutionProvider,CUDAExecutionProvider,CPUExecutionProvider]"
+      - ONNXRUNTIME_EXECUTION_PROVIDERS
     security_opt:
       - no-new-privileges
     cap_drop:
       - ALL
     cap_add:
       - NET_BIND_SERVICE
-    command: tail -f /dev/null
-    tty: true
     networks:
       - ai_network
 
