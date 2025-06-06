@@ -35,29 +35,22 @@ def decrypt_file(input_path: str, output_path: str, key: str) -> bool:
 def process_upload(input_path: str, output_dir: str, encryption_key: Optional[str] = None) -> bool:
     """Process uploaded file (zip or encrypted) and extract images."""
     try:
-        # Create output directory
         os.makedirs(output_dir, exist_ok=True)
         
-        # Handle encrypted file
         if encryption_key:
             temp_path = input_path + '.dec'
             if not decrypt_file(input_path, temp_path, encryption_key):
                 return False
             input_path = temp_path
         
-        # Extract zip file
         with zipfile.ZipFile(input_path, 'r') as zip_ref:
-            # Verify no path traversal attempts
             for file in zip_ref.namelist():
                 if file.startswith(('/', '..')) or '..' in file:
                     raise ValueError(f"Invalid path in zip: {file}")
-            
-            # Extract only image files
-            for file in zip_ref.namelist():
+                
                 if file.lower().endswith(('.png', '.jpg', '.jpeg', '.tiff', '.tif')):
                     zip_ref.extract(file, output_dir)
         
-        # Cleanup temporary file if needed
         if encryption_key and os.path.exists(temp_path):
             os.remove(temp_path)
         

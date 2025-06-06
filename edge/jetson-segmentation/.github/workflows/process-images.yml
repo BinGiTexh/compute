@@ -48,7 +48,6 @@ jobs:
       env:
         ENCRYPTION_KEY: ${{ secrets.UPLOAD_ENCRYPTION_KEY }}
       run: |
-        # Verify checksum if provided
         if [ -n "${{ github.event.inputs.checksum }}" ]; then
           echo "Verifying checksum..."
           actual_sum=$(sha256sum input/*.zip | cut -d' ' -f1)
@@ -58,7 +57,6 @@ jobs:
           fi
         fi
         
-        # Process the upload
         python3 scripts/utils/process_upload.py \
           input/*.zip \
           processed_input/ \
