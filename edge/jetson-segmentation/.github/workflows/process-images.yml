@@ -1,0 +1,87 @@
+name: Process Uploaded Images
+
+on:
+  workflow_dispatch:
+    inputs:
+      upload_type:
+        description: 'Upload type (artifact/release)'
+        required: true
+        default: 'artifact'
+        type: choice
+        options:
+          - artifact
+          - release
+      release_tag:
+        description: 'Release tag (if using release upload)'
+        required: false
+        type: string
+      checksum:
+        description: 'SHA-256 checksum of the upload (optional)'
+        required: false
+        type: string
+
+jobs:
+  process-images:
+    runs-on: self-hosted
+    tags: 
+      - jetson
+    
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Process artifact upload
+      if: ${{ github.event.inputs.upload_type == 'artifact' }}
+      uses: actions/upload-artifact@v3
+      with:
+        name: input-images
+        path: input/
+        
+    - name: Download from release
+      if: ${{ github.event.inputs.upload_type == 'release' }}
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        mkdir -p input
+        gh release download ${{ github.event.inputs.release_tag }} -D input/
+
+    - name: Verify and process upload
+      env:
+        ENCRYPTION_KEY: ${{ secrets.UPLOAD_ENCRYPTION_KEY }}
+      run: |
+        # Verify checksum if provided
+        if [ -n "${{ github.event.inputs.checksum }}" ]; then
+          echo "Verifying checksum..."
+          actual_sum=$(sha256sum input/*.zip | cut -d' ' -f1)
+          if [ "$actual_sum" != "${{ github.event.inputs.checksum }}" ]; then
+            echo "Checksum verification failed!"
+            exit 1
+          fi
+        fi
+        
+        # Process the upload
+        python3 scripts/utils/process_upload.py \
+          input/*.zip \
+          processed_input/ \
+          $ENCRYPTION_KEY
+
+    - name: Run segmentation pipeline
+      run: |
+        docker run --gpus all \
+          -v ${{ github.workspace }}/processed_input:/app/input \
+          -v ${{ github.workspace }}/output:/app/output \
+          --memory=8g \
+          --memory-swap=16g \
+          --shm-size=1g \
+          coralscapes-test:latest
+
+    - name: Upload results
+      uses: actions/upload-artifact@v3
+      with:
+        name: segmentation-results
+        path: output/
+        retention-days: 7
+
+    - name: Cleanup
+      if: always()
+      run: |
+        rm -rf input/* processed_input/* output/*
