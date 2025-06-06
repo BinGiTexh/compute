@@ -1,0 +1,59 @@
+name: Jetson Segmentation Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    runs-on: self-hosted
+    tags: 
+      - jetson
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        lfs: true
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+
+    - name: Build Docker image
+      uses: docker/build-push-action@v4
+      with:
+        context: ./scripts
+        load: true
+        tags: coralscapes-test:latest
+
+    - name: Create test directories
+      run: |
+        mkdir -p input output
+        chmod 777 input output
+
+    - name: Run segmentation pipeline
+      run: |
+        docker run --gpus all \
+          -v ${{ github.workspace }}/input:/app/input \
+          -v ${{ github.workspace }}/output:/app/output \
+          --memory=8g \
+          --memory-swap=16g \
+          --shm-size=1g \
+          coralscapes-test:latest
+
+    - name: Upload results
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: segmentation-results
+        path: output/
+        retention-days: 7
+
+    - name: Cleanup
+      if: always()
+      run: |
+        docker system prune -f
+        docker image rm coralscapes-test:latest || true
+        rm -rf input/* output/*
