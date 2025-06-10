@@ -1,0 +1,9 @@
+molecules:
+  - name: protein
+    sequence: MKTVRQERLKSIVRILERSKEPVSGAQLAEELSVSRQVIVQDIAYLRSLGYNIVATPRGYVLAGG
+  - name: ligand
+    sequence: PEPTIDE
+properties:
+  - type: structure
+  - type: affinity
+
