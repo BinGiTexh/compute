@@ -1,41 +1,34 @@
-FROM nvcr.io/nvidia/pytorch:24.05-py3
+FROM pytorch/pytorch:2.3.0-cuda12.1-cudnn8-runtime
 
-# Set environment variables
-ENV DEBIAN_FRONTEND=noninteractive
+# (optional) system packages …
+RUN apt-get update && apt-get install -y git build-essential
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    git \
-    wget \
-    curl \
-    build-essential \
-    python3-dev \
-    python3-pip \
-    python3-setuptools \
-    libopenblas-dev \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+# upgrade pip, but DO NOT touch torch / torchvision
+RUN pip install -U pip setuptools wheel
 
-# Install Python dependencies
-RUN pip3 install --no-cache-dir --upgrade pip setuptools wheel
-
-# Install Boltz from GitHub
+# install Boltz and extras without pulling deps
 WORKDIR /app
 RUN git clone https://github.com/jwohlwend/boltz.git
 WORKDIR /app/boltz
-RUN pip3 install --no-cache-dir -e .
+RUN pip install boltz -U
 
-# Install additional dependencies
-RUN pip3 install --no-cache-dir \
-    scipy \
-    matplotlib \
-    pandas \
-    jupyter \
-    jupyterlab \
-    biopython \
-    scikit-learn \
-    h5py \
-    tqdm
+RUN pip install --no-cache-dir --no-deps \
+ #   pytorch_lightning==2.2.* \
+ #   lightning_utilities==0.11.* \
+ #   torchmetrics==1.3.* \
+ #   packaging \
+    pyparsing \
+    cycler \
+    python-dateutil \
+    kiwisolver \
+    rdkit \
+    typing_extensions \
+ #   numba \
+ #   llvmlite \
+ #   einops \
+ #   mashumaro \
+    scipy matplotlib pandas jupyter jupyterlab \
+    biopython scikit-learn h5py tqdm
 
 # Create workspace directory for data and outputs
 RUN mkdir -p /workspace
@@ -49,12 +42,11 @@ ENV NVIDIA_DRIVER_CAPABILITIES=compute,utility
 # Expose ports for JupyterLab and potential API services
 EXPOSE 8888
 
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+#COPY entrypoint.sh /entrypoint.sh
+#RUN chmod +x /entrypoint.sh
 
 # Set the entrypoint
-ENTRYPOINT ["/entrypoint.sh"]
+#ENTRYPOINT ["/entrypoint.sh"]
 
 # Default command to run JupyterLab
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root", "--NotebookApp.token=''", "--NotebookApp.password=''"]
-
