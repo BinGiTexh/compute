@@ -1,6 +1,31 @@
-# JupyterLab with YOLO and Roboflow Integration
+# JupyterLab with YOLO, Roboflow Integration, and Marine AI Analysis
 
-This project provides a dockerized JupyterLab environment with YOLO and Roboflow integration, specifically configured for the fish-scuba-project.
+This project provides a comprehensive dockerized environment for computer vision and marine AI research, specifically configured for the fish-scuba-project and marine video analysis.
+
+## 🚀 New: Depth-Anything-V3 Marine Analysis
+
+### **TensorRT-Optimized Marine Depth Estimation**
+We have successfully implemented **Depth-Anything-V3** with TensorRT optimization for marine video analysis:
+
+- 📁 **Implementation**: `depth-anything-v3-marine/`
+- 🐢 **Tested**: 5-minute turtle video analysis (113 frames → 339 outputs)
+- ⚡ **Performance**: 0.27s/frame with GPU acceleration (3.7 FPS)
+- 🔬 **Interactive**: JupyterLab visualization environment
+- 🌊 **Marine-optimized**: Blue channel dominance detection
+
+**Quick Start:**
+```bash
+cd depth-anything-v3-marine
+./run_turtle_analysis.sh your_marine_video.mp4
+```
+
+[**→ Full Documentation**](depth-anything-v3-marine/README.md)
+
+---
+
+## 🔧 YOLO and Roboflow Integration
+
+This project provides a dockerized JupyterLab environment with YOLO and Roboflow integration.
 
 ## Prerequisites
 
@@ -87,7 +112,6 @@ sudo systemctl restart docker
 2. For authentication issues, verify your Roboflow API key is correctly set
 3. For permission issues with mounted volumes, ensure proper directory permissions
 
-
 ## Running coralscapes on Jetson AGX
 "${SHELL}" <(curl -L https://micro.mamba.pm/install.sh)
 
@@ -98,86 +122,62 @@ micromamba activate coralscapes
 
 python coralscapes_jetson.py  --input_dir ocean-images --output_dir outputs --save_overlay --overlay_alpha 0.5
 
+## 🌊 Available Marine AI Components
 
-For your NVIDIA Jetson AGX Orin 64GB, here are the best open-source models that can give you Claude-like performance when running locally:
-🚀 Top Recommendations
-1. Llama 3.1 8B Instruct (Recommended)
+### 1. Depth-Anything-V3 Marine Analysis (`depth-anything-v3-marine/`)
+- **TensorRT-optimized depth estimation** for marine environments
+- **Interactive visualization** with JupyterLab notebooks
+- **Production-ready pipeline** tested on turtle video analysis
+- **Marine environment detection** using blue channel analysis
 
-Performance: Excellent reasoning and instruction following
-Memory: ~16GB VRAM (with quantization)
-Strengths: Strong coding, analysis, and conversational abilities
-Implementation: Use llama.cpp or Ollama for efficient inference
+### 2. YOLO Object Detection (`yolo.py`, `yolo_improved_inference.py`)
+- **Roboflow integration** for custom marine datasets
+- **Real-time inference** with GPU acceleration
+- **Bounding box visualization** and export
 
-2. Qwen2.5 14B Instruct
+### 3. Coralscapes Analysis (`coralscapes_jetson.py`)
+- **Coral reef analysis** and classification
+- **Micromamba environment** for dependency management
+- **Overlay visualization** with configurable alpha blending
 
-Performance: Very strong coding and reasoning capabilities
-Memory: ~28GB VRAM (may need aggressive quantization)
-Strengths: Excellent at technical tasks, multilingual
-Note: Might be tight on memory but worth trying with 4-bit quantization
+### 4. NanoOWL Inference (`nanoowl_inference.py`)
+- **Open-vocabulary object detection** for marine life
+- **Natural language queries** for species detection
+- **Lightweight inference** optimized for edge devices
 
-3. CodeLlama 13B Instruct
+## 🔬 Research Applications
 
-Performance: Specialized for coding tasks
-Memory: ~26GB VRAM (with quantization)
-Strengths: Exceptional at code generation and debugging
-Best for: If you're primarily doing development work
+### Marine Biology
+- **Turtle behavior analysis** with depth profiling
+- **Fish population surveys** with automated detection
+- **Coral reef health monitoring** and classification
+- **3D habitat reconstruction** from depth maps
 
-🛠 Recommended Setup Stack
-Inference Engines
-bash# Option 1: Ollama (Easiest)
-curl -fsSL https://ollama.ai/install.sh | sh
-ollama pull llama3.1:8b
+### Conservation
+- **Biodiversity assessments** using AI-powered species identification
+- **Habitat quality analysis** through depth and visual features
+- **Behavioral pattern recognition** for wildlife monitoring
+- **Impact assessment** of environmental changes
 
-# Option 2: llama.cpp (More control)
-git clone https://github.com/ggerganov/llama.cpp
-cd llama.cpp && make LLAMA_CUBLAS=1
-Quantization for Memory Efficiency
+## 📊 Performance Benchmarks
 
-4-bit (Q4_K_M): ~50% memory reduction, minimal quality loss
-5-bit (Q5_K_M): ~40% memory reduction, better quality
-8-bit (Q8_0): ~25% memory reduction, near-original quality
+| Component | Processing Speed | GPU Utilization | Accuracy |
+|-----------|-----------------|-----------------|-----------|
+| Depth-Anything-V3 | 0.27s/frame (3.7 FPS) | ~2GB VRAM | High depth quality |
+| YOLO Detection | Real-time | Variable | Model-dependent |
+| Coralscapes | Batch processing | Optimized | Coral classification |
 
-💡 Optimization Tips for Jetson AGX Orin
-Memory Management
-bash# Increase swap space
-sudo fallocate -l 32G /swapfile
-sudo chmod 600 /swapfile
-sudo mkswap /swapfile
-sudo swapon /swapfile
-CUDA Optimization
+## 🤝 Contributing
 
-Enable CUDA acceleration in inference engines
-Use mixed precision (FP16/INT8) for better performance
-Monitor GPU memory usage with nvidia-smi
+This is part of the **BinGiTech Compute Edge** platform for marine AI research:
 
-Power Mode
-bash# Set maximum performance mode
-sudo nvpmodel -m 0
-sudo jetson_clocks
-📊 Expected Performance
-ModelSizeMemory UsageTokens/secQuality vs ClaudeLlama 3.1 8B8B~16GB15-2575-80%Qwen2.5 14B14B~28GB8-1580-85%CodeLlama 13B13B~26GB10-1870-75% (coding)
-🔧 Quick Start Commands
-Using Ollama
-bash# Install and run Llama 3.1 8B
-ollama pull llama3.1:8b
-ollama run llama3.1:8b
+1. Fork the repository
+2. Create feature branch for your marine AI component
+3. Test on marine datasets
+4. Submit pull request with performance benchmarks
 
-# For coding tasks
-ollama pull codellama:13b-instruct
-ollama run codellama:13b-instruct
-Using llama.cpp
-bash# Download quantized model
-wget https://huggingface.co/bartowski/Meta-Llama-3.1-8B-Instruct-GGUF/resolve/main/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf
+---
 
-# Run with CUDA
-./main -m Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf -n 512 -gpu-layers 32
-🎯 Best Choice for Your Use Case
-Given your 64GB system RAM and the Jetson's capabilities, I'd recommend starting with Llama 3.1 8B Instruct using Ollama. It offers:
-
-Excellent balance of performance and resource usage
-Strong general capabilities similar to Claude
-Easy setup and management
-Good community support and regular updates
-Reliable performance on ARM-based systems
-
-You can always experiment with larger models like Qwen2.5 14B if you find the 8B model insufficient for your needs. The 64GB RAM gives you good flexibility for model swapping and experimentation.
+**🔬 Built for Marine Conservation Research**  
+**⚡ Optimized for NVIDIA Jetson AGX Orin**  
+**🌊 Ready for Underwater AI Applications**

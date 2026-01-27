@@ -1,0 +1,30 @@
+FROM jupyter/scipy-notebook:latest
+
+# Switch to root to install system packages
+USER root
+
+# Install additional packages
+RUN apt-get update && apt-get install -y \
+    ffmpeg \
+    libsm6 \
+    libxext6 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Switch back to jovyan user
+USER jovyan
+
+# Install additional Python packages for image analysis
+RUN pip install --no-cache-dir \
+    opencv-python \
+    pillow \
+    matplotlib \
+    seaborn \
+    plotly \
+    ipywidgets \
+    tqdm
+
+# Set working directory
+WORKDIR /home/jovyan/work
+
+# Expose JupyterLab port
+EXPOSE 8888
