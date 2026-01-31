@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Robust Marine Turtle Depth Analysis using TensorRT-optimized Depth-Anything-V3
+Robust Marine Turtle Depth Analysis using TensorRT-optimized Depth-Anything-V2
 Jetson AGX Orin Implementation with improved video handling
 """
 
@@ -18,7 +18,7 @@ class TurtleDepthProcessorTRT:
         self.model_size = model_size
         self.use_trt = use_trt
         
-        print(f"🚀 Initializing Depth-Anything-V3 ({model_size}) on Jetson AGX Orin")
+        print(f"🚀 Initializing Depth-Anything-V2 ({model_size}) on Jetson AGX Orin")
         
         # Map model sizes to actual V2 model names
         model_mapping = {
