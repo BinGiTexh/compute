@@ -2,7 +2,7 @@
 from turtle_depth_processor import TurtleDepthProcessorTRT
 import os
 
-print("🐢 TensorRT Depth-Anything-V3 Marine Turtle Analysis")
+print("🐢 TensorRT Depth-Anything-V2 Marine Turtle Analysis")
 print("🚀 Jetson AGX Orin Implementation")
 print("="*50)
 

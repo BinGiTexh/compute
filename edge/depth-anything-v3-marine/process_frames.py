@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Process extracted frames for TensorRT Depth-Anything-V3 analysis
+Process extracted frames for TensorRT Depth-Anything-V2 analysis
 """
 
 import cv2
@@ -17,7 +17,7 @@ class FrameDepthProcessor:
     def __init__(self, model_size='small'):
         self.model_size = model_size
         
-        print(f"🚀 Initializing Depth-Anything-V3 ({model_size}) for frame processing")
+        print(f"🚀 Initializing Depth-Anything-V2 ({model_size}) for frame processing")
         
         # Map model sizes to actual V2 model names
         model_mapping = {
