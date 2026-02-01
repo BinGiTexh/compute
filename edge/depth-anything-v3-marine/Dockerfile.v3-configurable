@@ -1,0 +1,30 @@
+# Configurable V3 Container - Model size via ENV
+FROM dustynv/l4t-pytorch:r36.2.0
+
+WORKDIR /workspace
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y     git     libsndfile1     ffmpeg     && rm -rf /var/lib/apt/lists/*
+
+# Install V3 dependencies
+RUN pip3 install --index-url https://pypi.org/simple/     huggingface_hub     omegaconf     einops     addict     trimesh     opencv-python     pillow
+
+# Clone V3 source
+RUN git clone https://github.com/ByteDance-Seed/Depth-Anything-3.git
+
+# Copy configurable processor
+COPY v3_processor_configurable.py /workspace/v3_processor.py
+
+# Set environment for V3
+ENV PYTHONPATH=/workspace/Depth-Anything-3/src:
+
+# Default to base model (can be overridden)
+ENV V3_MODEL_SIZE=base
+
+# Available models: base, large, giant
+# Usage examples:
+# docker run -e V3_MODEL_SIZE=base v3-marine:latest    # ~0.1B params
+# docker run -e V3_MODEL_SIZE=large v3-marine:latest   # ~0.4B params  
+# docker run -e V3_MODEL_SIZE=giant v3-marine:latest   # ~1B+ params
+
+CMD [python3, /workspace/v3_processor.py]
