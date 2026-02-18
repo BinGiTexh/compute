@@ -1,0 +1,32 @@
+# Official Depth Anything 3 CLI Dockerized Wrapper
+# Based on ByteDance-Seed/Depth-Anything-3 official repository
+FROM dustynv/l4t-pytorch:r36.2.0
+
+WORKDIR /workspace
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y     git     ffmpeg     && rm -rf /var/lib/apt/lists/*
+
+# Install dependencies with correct PyPI index to avoid network issues
+RUN pip3 install --index-url https://pypi.org/simple/     huggingface_hub     omegaconf     einops     addict     trimesh     opencv-python     pillow     moviepy     transformers
+
+# Fix NumPy compatibility (critical for our Jetson setup)
+RUN pip3 uninstall -y numpy
+RUN pip3 install --index-url https://pypi.org/simple/ 'numpy==1.24.3' --force-reinstall
+
+# Clone official Depth-Anything-3 repository
+RUN git clone https://github.com/ByteDance-Seed/Depth-Anything-3.git
+
+# Install the official DA3 package
+WORKDIR /workspace/Depth-Anything-3
+RUN pip3 install -e .
+
+# Create mount points for input and output
+VOLUME [/data, /output]
+
+# Set working directory back to workspace
+WORKDIR /workspace
+
+# Default command runs the official da3 CLI
+ENTRYPOINT [da3]
+CMD [--help]

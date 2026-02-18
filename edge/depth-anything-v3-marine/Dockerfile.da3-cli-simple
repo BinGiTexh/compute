@@ -1,0 +1,33 @@
+# Simplified Official Depth Anything 3 CLI Wrapper
+FROM dustynv/l4t-pytorch:r36.2.0
+
+WORKDIR /workspace
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y     git     ffmpeg     && rm -rf /var/lib/apt/lists/*
+
+# Install dependencies with correct PyPI index
+RUN pip3 install --index-url https://pypi.org/simple/     huggingface_hub     omegaconf     einops     addict     trimesh     opencv-python     pillow     transformers
+
+# Fix NumPy compatibility (critical for Jetson)
+RUN pip3 uninstall -y numpy
+RUN pip3 install --index-url https://pypi.org/simple/ 'numpy==1.24.3' --force-reinstall
+
+# Clone official repository
+RUN git clone https://github.com/ByteDance-Seed/Depth-Anything-3.git
+
+# Copy the source to the Python path manually (avoid build dependency issues)
+RUN cp -r Depth-Anything-3/src/depth_anything_3 /usr/local/lib/python3.10/dist-packages/
+
+# Create a simple da3 CLI wrapper script
+RUN echo '#!/usr/bin/env python3' > /usr/local/bin/da3 &&     echo 'import sys' >> /usr/local/bin/da3 &&     echo 'sys.path.insert(0, /workspace/Depth-Anything-3/src)' >> /usr/local/bin/da3 &&     echo 'from depth_anything_3.cli import main' >> /usr/local/bin/da3 &&     echo 'if __name__ == __main__:' >> /usr/local/bin/da3 &&     echo '    main()' >> /usr/local/bin/da3 &&     chmod +x /usr/local/bin/da3
+
+# Create mount points for input and output  
+VOLUME [/data, /output]
+
+# Set environment variables
+ENV PYTHONPATH=/workspace/Depth-Anything-3/src:
+
+# Default command runs the da3 CLI
+ENTRYPOINT [da3]
+CMD [--help]
