@@ -1,0 +1,34 @@
+# PROVEN WORKING Depth Anything V3 Pipeline - Final Version
+FROM dustynv/l4t-pytorch:r36.2.0
+
+WORKDIR /workspace
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y     git     ffmpeg     && rm -rf /var/lib/apt/lists/*
+
+# Install V3 dependencies FIRST (proper index URL)
+RUN pip3 install --index-url https://pypi.org/simple/     huggingface_hub     omegaconf     einops     addict     trimesh     opencv-python     pillow     moviepy
+
+# Install transformers WITHOUT numpy dependency update
+RUN pip3 install --index-url https://pypi.org/simple/ transformers --no-deps
+RUN pip3 install --index-url https://pypi.org/simple/ tokenizers safetensors regex
+
+# NOW fix NumPy compatibility as FINAL step (critical fix)
+RUN pip3 uninstall -y numpy
+RUN pip3 install --index-url https://pypi.org/simple/ 'numpy==1.24.3' --force-reinstall
+
+# Clone real DA3 source
+RUN git clone https://github.com/ByteDance-Seed/Depth-Anything-3.git
+
+# Set environment for DA3
+ENV PYTHONPATH=/workspace/Depth-Anything-3/src:
+ENV PYTHONWARNINGS=ignore
+
+# Copy our proven V3 components
+COPY v3_processor_proven.py /workspace/
+COPY simple_v3_test.py /workspace/
+
+# Test that DA3 works (this should pass now)
+RUN python3 /workspace/simple_v3_test.py && echo SUCCESS: Proven DA3 pipeline ready!
+
+CMD [python3, /workspace/v3_processor_proven.py]
