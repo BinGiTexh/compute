@@ -1,0 +1,27 @@
+# CFD container rebuilt on the same base as da3-cuda-jetson
+# Fixes CUDA driver mismatch: uses PyTorch 2.2 + CUDA 12.2
+# (compatible with L4T r35.2.1 Jetson AGX Orin)
+FROM dustynv/l4t-pytorch:r36.2.0
+
+WORKDIR /app
+
+# Override pip index to use PyPI (base image's custom index is unreachable)
+ENV PIP_INDEX_URL=https://pypi.org/simple/
+ENV PIP_TRUSTED_HOST=pypi.org
+
+# Install ultralytics (YOLO framework) without replacing the working PyTorch
+RUN pip3 install --no-cache-dir ultralytics --no-deps && \
+    pip3 install --no-cache-dir \
+    py-cpuinfo psutil pyyaml tqdm requests pandas \
+    seaborn scipy thop ultralytics-thop
+
+# Install OpenCV without upgrading numpy (PyTorch 2.2 needs numpy<2)
+RUN pip3 install --no-cache-dir "opencv-python-headless<4.11" "numpy<2" 2>/dev/null || true
+
+# Download CFD model weights
+RUN wget -q https://github.com/WildHackers/community-fish-detector/releases/download/cfd-1.00-yolov12x/cfd-yolov12x-1.00.pt \
+    -O /app/cfd-yolov12x-1.00.pt
+
+COPY run_cfd.py /app/run_cfd.py
+
+ENTRYPOINT ["python3", "/app/run_cfd.py"]
