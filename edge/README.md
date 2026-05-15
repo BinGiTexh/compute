@@ -1,183 +1,94 @@
-# JupyterLab with YOLO, Roboflow Integration, and Marine AI Analysis
+# Edge Compute — Marine AI Pipeline
 
-This project provides a comprehensive dockerized environment for computer vision and marine AI research, specifically configured for the fish-scuba-project and marine video analysis.
+GPU-accelerated marine video analysis on NVIDIA Jetson AGX Orin 64GB. Fish detection, monocular depth estimation, and automated encounter counting calibrated against professional diver surveys.
 
-## 🚀 New: Depth-Anything-V3 Marine Analysis
+## Active Components
 
-### **TensorRT-Optimized Marine Depth Estimation**
-We have successfully implemented **Depth-Anything-V3** with TensorRT optimization for marine video analysis:
+### CFD Fish Detection Pipeline (`cfd/`)
 
-- 📁 **Implementation**: `depth-anything-v3-marine/`
-- 🐢 **Tested**: 5-minute turtle video analysis (113 frames → 339 outputs)
-- ⚡ **Performance**: 0.27s/frame with GPU acceleration (3.7 FPS)
-- 🔬 **Interactive**: JupyterLab visualization environment
-- 🌊 **Marine-optimized**: Blue channel dominance detection
+End-to-end fish encounter counting from underwater transect video.
 
-**Quick Start:**
-```bash
-cd depth-anything-v3-marine
-./run_turtle_analysis.sh your_marine_video.mp4
-```
-
-[**→ Full Documentation**](depth-anything-v3-marine/README.md)
-
----
-
-## 🔧 YOLO and Roboflow Integration
-
-This project provides a dockerized JupyterLab environment with YOLO and Roboflow integration.
-
-## Prerequisites
-
-1. Docker installed on your system
-2. NVIDIA GPU with appropriate drivers
-3. NVIDIA Container Toolkit installed
-4. Roboflow API key
-
-### Installing NVIDIA Container Toolkit
+- **Container:** `ultralytics-cfd-gpu` (YOLOv12x, 113ms/frame on Orin)
+- **Pipeline:** `run_pipeline_v2.sh` — extract → detect → deduplicate → depth → report
+- **Validation:** Calibrated against 27-year diver survey (ESPERANZA T1: 23 AI events vs 17 diver encounters)
+- **Runbook:** [`cfd/RUNBOOK.md`](cfd/RUNBOOK.md)
 
 ```bash
-curl -s -L https://nvidia.github.io/nvidia-container-runtime/gpgkey | \
-    sudo apt-key add -
-distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
-curl -s -L https://nvidia.github.io/nvidia-container-runtime/$distribution/nvidia-container-runtime.list | \
-    sudo tee /etc/apt/sources.list.d/nvidia-container-runtime.list
-sudo apt-get update
-sudo apt-get install -y nvidia-container-toolkit
-sudo systemctl restart docker
+cd cfd
+bash run_pipeline_v2.sh /jetson-ssd/videos/T1.mp4 ESPERANZA T1 V1
 ```
 
-## Building and Running
+### Depth Anything V3 (`depth-anything-v3-marine/`)
 
-### Using Docker Compose (Recommended)
+Monocular depth estimation for marine video. Used by the CFD pipeline for 3D depth maps of fish encounter frames.
 
-1. Export your Roboflow API key:
-   ```bash
-   export ROBOFLOW_API_KEY=your_api_key
-   ```
+- **Container:** `da3-cuda-jetson` (DA3NESTED-GIANT-LARGE-1.1, 6.76GB model)
+- **Base:** `dustynv/l4t-pytorch:r36.2.0` (PyTorch 2.2 + CUDA 12.2)
+- **Dockerfiles:** `Dockerfile.da3-cli` (production), `Dockerfile.da3-complete` (with extras)
 
-2. Build and start the container:
-   ```bash
-   docker-compose up --build
-   ```
+```bash
+docker run --rm --runtime nvidia -v /jetson-ssd:/jetson-ssd \
+  da3-cuda-jetson images /path/to/frames \
+  --model-dir depth-anything/DA3NESTED-GIANT-LARGE-1.1 \
+  --export-dir /path/to/output --export-format mini_npz
+```
 
-### Using Docker Directly
+### Supporting Tools
 
-1. Build the image:
-   ```bash
-   docker build -t jupyterlab-yolo .
-   ```
+| Component | Purpose |
+|-----------|---------|
+| `yolo.py` | Basic YOLO inference script |
+| `yolo_improved_inference.py` | YOLO with argparse and result export |
+| `coralscapes_jetson.py` | Coral reef segmentation and classification |
+| `nanoowl_inference.py` | Open-vocabulary detection (NVIDIA NanoOWL) |
+| `monitoring.py` | GPU/system resource monitoring |
+| `base_config.py` | Shared configuration for edge workloads |
+| `notebooks/` | Jupyter notebooks for exploration and diagnostics |
 
-2. Run the container:
-   ```bash
-   docker run --gpus all -p 8888:8888 \
-     -v $(pwd)/notebooks:/workspace/notebooks \
-     -v $(pwd)/data:/workspace/data \
-     -e ROBOFLOW_API_KEY=your_api_key \
-     jupyterlab-yolo
-   ```
+## Hardware
 
-## Accessing JupyterLab
+- **NVIDIA Jetson AGX Orin 64GB** (L4T r35.2.1, CUDA 11.4 driver)
+- **Storage:** `/jetson-ssd/` (NVMe, pipeline data and containers)
+- **Access:** `sshpass -p aburto ssh mza-bingi@10.1.102.97`
 
-1. Once the container is running, open your browser and navigate to:
-   ```
-   http://localhost:8888
-   ```
+## Docker Images
 
-2. Enter the token specified in the docker-compose.yml file (default: "your_secure_token")
+| Image | Base | Purpose | Perf |
+|-------|------|---------|------|
+| `ultralytics-cfd-gpu` | `dustynv/l4t-pytorch:r36.2.0` | Fish detection (YOLOv12x) | 113ms/frame |
+| `da3-cuda-jetson` | `dustynv/l4t-pytorch:r36.2.0` | Depth estimation + ffmpeg | 20s/frame (giant) |
 
-## Using the YOLO Model
+Both images use the same base to avoid CUDA driver mismatch. Key constraint: must pin `numpy<2` for PyTorch 2.2 compatibility.
 
-1. Open the provided `notebooks/yolo_demo.ipynb` notebook
-2. The notebook includes examples of:
-   - Loading the Roboflow model
-   - Running inference on images
-   - Visualizing results
+## Directory Structure
 
-## Data Persistence
+```
+edge/
+  cfd/                        Fish detection pipeline (source of truth)
+  depth-anything-v3-marine/   DA3 depth estimation
+  configs/                    Model and device configs
+  devices/                    Device-specific setup
+  docker/                     Shared Docker utilities
+  docs/                       Architecture documentation
+  jetson-runner/              GitHub Actions self-hosted runner
+  jetson-segmentation/        Segmentation pipeline
+  models/                     Model registry
+  notebooks/                  Jupyter exploration notebooks
+  scripts/                    Utility scripts (benchmark, export, etc.)
+  tests/                      Test suite
+```
 
-- Notebooks are persisted in the `./notebooks` directory
-- Data files are persisted in the `./data` directory
-- Both directories are mounted as volumes in the container
+## Workflow
 
-## Security Notes
+1. Video files land on `/jetson-ssd/compute/edge/depth-anything-v3-marine/videos/`
+2. Run `cfd/run_pipeline_v2.sh` for automated fish encounter counting
+3. Compare results against ground truth: `cfd/compare_to_official.py`
+4. Push results to S3: `aws s3 sync` to `s3://ml-ai-assets/marine-datasets/`
 
-1. Change the default JUPYTER_TOKEN in docker-compose.yml before deploying
-2. Never commit your Roboflow API key to version control
-3. Use environment variables for sensitive information
+## Source of Truth
 
-## Troubleshooting
+Code is maintained in two repos:
+- **`mcam10/turing-pi-homelab`** (`cfd/` directory) — primary development
+- **`BinGiTexh/compute`** (`edge/` directory) — Jetson deployment, `git pull` to update
 
-1. If GPU is not detected, ensure nvidia-container-toolkit is properly installed
-2. For authentication issues, verify your Roboflow API key is correctly set
-3. For permission issues with mounted volumes, ensure proper directory permissions
-
-## Running coralscapes on Jetson AGX
-"${SHELL}" <(curl -L https://micro.mamba.pm/install.sh)
-
-micromamba env create -f environment.yml
-micromamba activate coralscapes
-eval "$(micromamba shell hook --shell bash)"
-micromamba activate coralscapes
-
-python coralscapes_jetson.py  --input_dir ocean-images --output_dir outputs --save_overlay --overlay_alpha 0.5
-
-## 🌊 Available Marine AI Components
-
-### 1. Depth-Anything-V3 Marine Analysis (`depth-anything-v3-marine/`)
-- **TensorRT-optimized depth estimation** for marine environments
-- **Interactive visualization** with JupyterLab notebooks
-- **Production-ready pipeline** tested on turtle video analysis
-- **Marine environment detection** using blue channel analysis
-
-### 2. YOLO Object Detection (`yolo.py`, `yolo_improved_inference.py`)
-- **Roboflow integration** for custom marine datasets
-- **Real-time inference** with GPU acceleration
-- **Bounding box visualization** and export
-
-### 3. Coralscapes Analysis (`coralscapes_jetson.py`)
-- **Coral reef analysis** and classification
-- **Micromamba environment** for dependency management
-- **Overlay visualization** with configurable alpha blending
-
-### 4. NanoOWL Inference (`nanoowl_inference.py`)
-- **Open-vocabulary object detection** for marine life
-- **Natural language queries** for species detection
-- **Lightweight inference** optimized for edge devices
-
-## 🔬 Research Applications
-
-### Marine Biology
-- **Turtle behavior analysis** with depth profiling
-- **Fish population surveys** with automated detection
-- **Coral reef health monitoring** and classification
-- **3D habitat reconstruction** from depth maps
-
-### Conservation
-- **Biodiversity assessments** using AI-powered species identification
-- **Habitat quality analysis** through depth and visual features
-- **Behavioral pattern recognition** for wildlife monitoring
-- **Impact assessment** of environmental changes
-
-## 📊 Performance Benchmarks
-
-| Component | Processing Speed | GPU Utilization | Accuracy |
-|-----------|-----------------|-----------------|-----------|
-| Depth-Anything-V3 | 0.27s/frame (3.7 FPS) | ~2GB VRAM | High depth quality |
-| YOLO Detection | Real-time | Variable | Model-dependent |
-| Coralscapes | Batch processing | Optimized | Coral classification |
-
-## 🤝 Contributing
-
-This is part of the **BinGiTech Compute Edge** platform for marine AI research:
-
-1. Fork the repository
-2. Create feature branch for your marine AI component
-3. Test on marine datasets
-4. Submit pull request with performance benchmarks
-
----
-
-**🔬 Built for Marine Conservation Research**  
-**⚡ Optimized for NVIDIA Jetson AGX Orin**  
-**🌊 Ready for Underwater AI Applications**
+Keep both in sync. Develop locally, push to both, pull on Jetson.
